@@ -1,6 +1,6 @@
 import Grainient from "@/components/Grainient"
 import fotoPerfil from "@/assets/imagens/foto_eu_2.jpeg"
-import CardPerfil from "@/components/CardPerfilTEMP"
+import CardPerfil from "@/components/CardPerfil"
 import GlassButton from "@/components/GlassButton"
 import { FaLinkedin, FaGithub, FaFilePdf } from "react-icons/fa";
 import { MdWork } from "react-icons/md";
