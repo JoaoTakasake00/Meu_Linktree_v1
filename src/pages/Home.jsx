@@ -2,18 +2,53 @@ import Grainient from "@/components/Grainient"
 import fotoPerfil from "@/assets/imagens/foto_eu_2.jpeg"
 import CardPerfil from "@/components/CardPerfil"
 import GlassButton from "@/components/GlassButton"
-import { FaLinkedin, FaGithub, FaFilePdf } from "react-icons/fa";
-import { MdWork } from "react-icons/md";
-import { IoLogoWhatsapp } from "react-icons/io";
-import { MdEmail } from "react-icons/md";
+
+import { FaLinkedin, FaGithub, FaFilePdf } from "react-icons/fa"
+import { MdWork, MdEmail } from "react-icons/md"
+import { IoLogoWhatsapp } from "react-icons/io"
 
 function Home() {
+
+  const links = [
+    {
+      title: "Currículo",
+      href: "/CV_Joao_victor_takasake_5.pdf",
+      icon: FaFilePdf,
+    },
+    {
+      title: "Portfólio",
+      href: "https://portifolio-joao-takasake.vercel.app/",
+      icon: MdWork,
+    },
+    {
+      title: "Whatsapp",
+      href: "https://api.whatsapp.com/send/?phone=5511970820335",
+      icon: IoLogoWhatsapp,
+    },
+    {
+      title: "LinkedIn",
+      href: "https://www.linkedin.com/in/joao-victor-takasake/",
+      icon: FaLinkedin,
+    },
+    {
+      title: "GitHub",
+      href: "https://github.com/JoaoTakasake00",
+      icon: FaGithub,
+    },
+    {
+      title: "Email",
+      href: "mailto:jv2takasake@gmail.com",
+      icon: MdEmail,
+    },
+  ]
+
   return (
-    <section className="w-screen h-screen bg-[var(--color-background)] flex items-center justify-center">
+    <section className="w-full min-h-screen bg-[var(--color-background)] flex items-center justify-center px-4 py-8">
 
-      <div className="relative w-[480px] h-[800px] rounded-2xl overflow-hidden shadow-xl">
+      {/* Container principal */}
+      <div className="relative w-full max-w-md rounded-3xl overflow-hidden shadow-2xl">
 
-        {/* Gradiente como fundo */}
+        {/* Fundo animado */}
         <Grainient
           className="absolute inset-0"
           color1="#020764"
@@ -38,53 +73,27 @@ function Home() {
           centerX={0}
           centerY={0}
           zoom={0.9}
-          
         />
 
-        {/* Conteúdo por cima */}
-        <div className="relative z-10 flex items-center justify-center w-full h-full flex-col gap-4 p-10">
-          <CardPerfil 
+        {/* Conteúdo */}
+        <div className="relative z-10 flex flex-col items-center gap-6 p-6 sm:p-8">
+
+          <CardPerfil
             fotoPerfil={fotoPerfil}
-            nome="João victor Takasake"
-            descricao="Desenvolvedor Full-Stack" 
+            nome="João Victor Takasake"
+            descricao="Desenvolvedor Full-Stack"
           />
-          <div className="flex flex-col gap-4 w-full items-center justify-center">
-            <GlassButton
-              title="Currículo"
-              href="/CV_Joao_victor_takasake_5.pdf"
-              newTab
-              icon={FaFilePdf}
-            />
-            <GlassButton
-              title="Portifólio"
-              href="https://portifolio-joao-takasake.vercel.app/"
-              newTab
-              icon={MdWork}
-            />
-            <GlassButton
-              title="Whatsapp"
-              href="https://api.whatsapp.com/send/?phone=11970820335"
-              newTab
-              icon={IoLogoWhatsapp}
-            />
-            <GlassButton
-              title="LinkedIn"
-              href="https://www.linkedin.com/in/joao-victor-takasake/"
-              newTab
-              icon={FaLinkedin}
-            />
-            <GlassButton
-              title="GitHub"
-              href="https://github.com/JoaoTakasake00"
-              newTab
-              icon={FaGithub}
-            />
-            <GlassButton
-              title="Email"
-              href="mailto:jv2takasake@gmail.com"
-              newTab
-              icon={MdEmail}
-            />
+
+          <div className="flex flex-col gap-4 w-full">
+            {links.map((item, index) => (
+              <GlassButton
+                key={index}
+                title={item.title}
+                href={item.href}
+                newTab
+                icon={item.icon}
+              />
+            ))}
           </div>
         </div>
       </div>
