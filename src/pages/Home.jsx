@@ -1,10 +1,11 @@
 import Grainient from "@/components/Grainient"
 import fotoPerfil from "@/assets/imagens/foto_eu_2.jpeg"
-import CardPerfil from "@/components/cardPerfil"
+import CardPerfil from "@/components/CardPerfil"
 import GlassButton from "@/components/GlassButton"
 import { FaLinkedin, FaGithub, FaFilePdf } from "react-icons/fa";
 import { MdWork } from "react-icons/md";
 import { IoLogoWhatsapp } from "react-icons/io";
+import { MdEmail } from "react-icons/md";
 
 function Home() {
   return (
@@ -61,22 +62,28 @@ function Home() {
               icon={MdWork}
             />
             <GlassButton
+              title="Whatsapp"
+              href="https://api.whatsapp.com/send/?phone=11970820335"
+              newTab
+              icon={IoLogoWhatsapp}
+            />
+            <GlassButton
               title="LinkedIn"
               href="https://www.linkedin.com/in/joao-victor-takasake/"
               newTab
               icon={FaLinkedin}
             />
             <GlassButton
-              title="Whatsapp"
-              href="https://www.linkedin.com/in/joao-victor-takasake/"
-              newTab
-              icon={IoLogoWhatsapp}
-            />
-            <GlassButton
               title="GitHub"
               href="https://github.com/JoaoTakasake00"
               newTab
               icon={FaGithub}
+            />
+            <GlassButton
+              title="Email"
+              href="mailto:jv2takasake@gmail.com"
+              newTab
+              icon={MdEmail}
             />
           </div>
         </div>
