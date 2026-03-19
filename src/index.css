@@ -126,9 +126,26 @@
     @apply border-border outline-ring/50;
 
   }
+  html {
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    background-color: var(--color-background);
+  }
   body {
     @apply bg-background text-foreground;
-
+    margin: 0;
+    width: 100%;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    background-color: var(--color-background);
+  }
+  #root {
+    width: 100%;
+    min-height: 100dvh;
+    overflow: hidden;
+    background-color: var(--color-background);
   }
 
 }
